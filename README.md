@@ -10,9 +10,9 @@ The dataset used in this pipeline can be downloaded **[here](https://drive.googl
 
 ### Weights
 
-The training weights can be found on this **[link](https://drive.google.com/file/d/1YfSpdh6uVjydiVl01f-Gavv9JM4VGt-s/view?usp=sharing)**. The default location of weights is inside the `weights` directory. 
+The training weights can be found on this **[link](https://drive.google.com/file/d/1McWdxLLLfpsK8O-wg3O95ygcFM0MI0l2/view?usp=sharing)**. The default location of weights is inside the `weights` directory. 
 
-Samples and epochs were reduced due to limited training time. An mAP of 65% and a mean miou of 64% were obtained when the model was evaluated.
+Samples and epochs were reduced due to limited training time. An mAP of 64.9% and a mean miou of 72.5% were obtained when the model was evaluated.
 
 ## Training
 

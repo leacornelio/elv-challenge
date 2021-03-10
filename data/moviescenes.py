@@ -94,8 +94,11 @@ def parse_data(data_root, mode, offset, seq_len, shot_num):
 
             for key in movie_data.keys():
                 if key not in ['imdb_id', 'shot_end_frame']:
-                    # Limit samples due to limited training time
-                    feat = data[key][:100].cpu().detach().numpy()
+                    # Limit samples due to limited resources`
+                    if mode == 'train':
+                        feat = data[key][:100].cpu().detach().numpy()
+                    else:
+                        feat = data[key][:10].cpu().detach().numpy()
                     
                     if key == 'scene_transition_boundary_ground_truth':
                         split_data = []

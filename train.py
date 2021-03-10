@@ -101,8 +101,12 @@ def test(args, model, data_args):
             imdb_id = imdb_id[0]
 
             if any(gt):
-                gt_dict[imdb_id] = gt
-                pr_dict[imdb_id] = prediction
+                if imdb_id not in gt_dict:
+                    gt_dict[imdb_id] = gt
+                    pr_dict[imdb_id] = prediction
+                else:
+                    gt_dict[imdb_id] = np.concatenate((gt_dict[imdb_id], gt))
+                    pr_dict[imdb_id] = np.concatenate((pr_dict[imdb_id], prediction))
                 shot_end_frame_dict[imdb_id] = shot_end_frame[0]
             
     # Calculate mAP and Mean Miou
